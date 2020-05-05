@@ -81,7 +81,7 @@ export default class App extends Component<Props> {
     }
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        {Platform.OS === 'ios' && <StatusBar hidden={true} />}
         <Navigator />
       </View>
     );

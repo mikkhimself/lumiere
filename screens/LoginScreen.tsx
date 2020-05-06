@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  Keyboard,
-  StyleSheet,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { Text, View, Keyboard, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import firebase from 'firebase';
 import Logo from '../components/Logo';
 import AnimatedLoader from 'react-native-animated-loader';
-
 import InputField from '../components/Forms/Components/InputField';
 
 interface InputProps {
@@ -19,6 +11,10 @@ interface InputProps {
   error: string;
   loading: boolean;
 }
+
+const image = {
+  uri: 'https://i.imgur.com/0SZSMto.png',
+};
 
 export class LoginScreen extends React.Component<{ navigation: any }, InputProps> {
   constructor(props) {
@@ -46,7 +42,6 @@ export class LoginScreen extends React.Component<{ navigation: any }, InputProps
   render() {
     const { password, email, loading, error } = this.state;
     const { navigation } = this.props;
-
     return (
       <>
         <View style={styles.logo}>
@@ -107,10 +102,13 @@ export class LoginScreen extends React.Component<{ navigation: any }, InputProps
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={{ alignSelf: 'center', top: '8%' }}>
+        <View
+          onStartShouldSetResponder={() => navigation.navigate('Signup')}
+          style={{ alignSelf: 'center', top: '8%' }}
+        >
           <Text style={{ fontFamily: 'SF-Medium', color: '#787993', fontSize: 16 }}>
             Still without account?
-            <Text style={{ fontFamily: 'SF-Medium', color: '#FF7052', fontSize: 16 }}>
+            <Text style={{ fontFamily: 'SF-Medium', color: '#7540EE', fontSize: 16 }}>
               {''} Create one
             </Text>
           </Text>

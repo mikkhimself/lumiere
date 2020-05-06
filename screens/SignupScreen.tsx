@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 import { Text, View, Keyboard, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import firebase from 'firebase';
 import Arrow from '../components/Arrow';
@@ -13,9 +13,6 @@ interface InputProps {
   loading: boolean;
 }
 
-const image = {
-  uri: 'https://i.imgur.com/0SZSMto.png',
-};
 
 export class LoginScreen extends React.Component<{ navigation: any }, InputProps> {
   constructor(props) {

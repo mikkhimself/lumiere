@@ -1,29 +1,25 @@
-import * as WebBrowser from 'expo-web-browser';
-import * as React from 'react';
-import { Platform, StyleSheet, Text, View, ImageBackground } from 'react-native';
-import Shapes from '../components/Shapes';
-const image = { Shapes };
-
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <Text>Hello</Text>
-    </View>
-  );
+import React from 'react';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { DrawerActions } from 'react-navigation';
+export class HomeScreen extends React.Component {
+  static navigationOptions = {
+    header: null,
+  };
+  render() {
+    return (
+      <View>
+        <Text>Sample Text</Text>
+      </View>
+    );
+  }
 }
 
-HomeScreen.navigationOptions = {
-  header: null,
-};
+export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
+  headerStyle: {
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
   },
 });

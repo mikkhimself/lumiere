@@ -3,8 +3,14 @@ import Svg, { G, Text, TSpan, Path } from 'react-native-svg';
 
 function Logo(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <Svg width={78} height={25.977} viewBox="0 0 78 25.977">
-      <Text transform="translate(32 20.977)" fill="#7540ee" fontSize={18} letterSpacing=".016em">
+    <Svg width={101} height={25.977} viewBox="0 0 101 25.977" {...props}>
+      <Text
+        transform="translate(32 20.977)"
+        fill="#7540ee"
+        fontSize={18}
+        fontWeight={300}
+        letterSpacing=".016em"
+      >
         <TSpan x={0} y={0}>
           {'Lumiere'}
         </TSpan>
